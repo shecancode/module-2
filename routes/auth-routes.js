@@ -84,7 +84,7 @@ router.get('/login', (req, res, next)=>{
 //LOGIN POST
 router.post('/login', passport.authenticate('local',
 {
-  successRedirect: '/',
+  successRedirect: '/userprofile',
   failureRedirect: '/login',
   failureFlash: true,
   passReqToCallback: true
@@ -100,22 +100,44 @@ router.get('/logout', (req, res) => {
 
 //USER PROFILE GET
 router.get('/userprofile', (req, res, next) => {
-  res.render('auth/userprofile');
+  res.render('auth/userprofile', {user: req.user});
 
-  // Character.findById( req.params.id)
-  // .then((user) => {
-  //   res.json(user);
-
-  // })
-  // .catch((err) => {
-  //   console.log(err);
-  // });
-  
 })
 
 //USER PROFILE POST
 router.post('/userprofile', (req, res, next) => {
- 
+
 })
+
+
+// //USER ID GET
+// router.get("/users/:id", (req, res, next) => {
+
+//   User.findById( req.params.id)
+
+//   .then((theUser )=> {
+//     res.json(theUser);
+//   })
+
+//   .catch((err) => {
+//     console.log(err);
+//   });
+  
+//   })
+
+
+  router.post("/users/update/:id" ,  (req, res, next)=> {
+
+    User.findByIdAndUpdate(req.params.id, req.body)
+    .then((updatedUser) => {
+      res.json(updatedUser);
+    })
+   .catch((err) => {
+     console.log(err);
+     next(err);
+   })
+    
+  }) 
+
 
 module.exports = router;

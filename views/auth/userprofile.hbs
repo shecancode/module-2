@@ -2,7 +2,7 @@
   <h4>Edit profile</h4>
 
 
-  <label for="username-input">First Name</label>
+  {{!-- <label for="username-input">First Name</label>
   <input id="username-input" type="text" name="firstname">
     <br><br> 
   <label for="lastname-input">Last Name</label>
@@ -18,7 +18,55 @@
   <input id="zipcode-input" type="text" name="zipcode" placeholder="">
 
   <h2>Current Pets</h2>
-  <h4>Add a pet</h4>
+  <h4>Add a pet</h4> --}}
+
+  {{!-- <label for="name">Name</label>
+  <input id="name" type="text" name="name">
+
+    <br><br> 
+
+  <label for="type">Type</label>
+  <select class="form-control">
+      <option>Dog</option>
+      <option>Cat</option>
+      <option>Rabbit</option>
+      <option>Bird</option>
+      <option>Reptile</option>
+      <option>Small and furry</option>
+      <option>Horse</option>
+      <option>Barnyard</option>
+
+  </select> --}}
+  <form id="edit-character-form" class="character-form">
+        <div class="username-input">
+          <label for="username-input">First Name:</label>
+          <input type="text" class="edit-first" placeholder="{{user.fristname}}">
+        </div>
+        <div class="lastname-input">
+          <label for="lastname-input">Last Name: </label>
+          <input type="text" class="edit-last">
+        </div>
+        <div class="email-input">
+          <label for="email-input">Email: </label>
+          <input type="text" class="edit-email">
+        </div>
+        <div class="password-input">
+          <label for="password-input">Passowrd: </label>
+          <input type="text" class="edit-password">
+        </div>
+        <div class="zipcode">
+          <label for="zipcode-input">Zipcode: </label>
+          <input type="text" class="edit-zipcode">
+        </div>
+        <button id="send-data">Update</button>
+      </form>
+
+    <br><br> 
+
+    <br><br> 
+
+  <h2>Current Pets</h2>
+  <h4>Add a pet</h4> 
 
   <label for="name">Name</label>
   <input id="name" type="text" name="name">
@@ -38,12 +86,10 @@
 
   </select>
 
-    <br><br> 
-
-    <br><br> 
-
   <label for="birthday">Birthday/Adoption day</label>
   <input id="birthday" type="text" name="birthday">
+
+  <button class="update">Update profile</button>
 
 
 

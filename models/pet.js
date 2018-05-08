@@ -19,7 +19,9 @@ const petSchema = new Schema({
     name: String,
     declawed: Boolean,
     available: Boolean,
-    available: Boolean
+    goodwithkids: Boolean,
+    goodwithcats: Boolean,
+    goodwithdogs: Boolean
     
 
 })
