@@ -1,0 +1,35 @@
+<h2>Signup</h2>
+
+<form action="/signup" method="POST" id="form-container">
+
+  <label for="username-input">First Name</label>
+  <input id="username-input" type="text" name="firstname" placeholder="Rick">
+     <br><br>
+  <label for="lastname-input">Last Name</label>
+  <input id="lastname-input" type="text" name="lastname" placeholder="Sanchez">
+     <br><br>
+  <label for="email-input">Email</label>
+  <input id="email-input" type="text" name="email" placeholder="Your@email.com">
+     <br><br>
+  <label for="password-input">Password</label>
+  <input id="password-input" type="password" name="password" placeholder="Your password" minlength="5" maxlength="12">
+     <br><br>
+  <label for="zipcode-input">ZipCode</label>
+  <input id="zipcode-input" type="text" name="zipcode" placeholder="">
+
+
+  {{#if message}}
+    <div class="error-message">{{ message }}</div>
+  {{/if}}
+  <br><br>
+
+  <button>Create account</button>
+
+  <p class="account-message">
+    Do you already have an account?
+    <a href="/login">Login</a>
+  </p>
+
+  <br><br>
+  <a href="/">Go Home</a>
+</form>
