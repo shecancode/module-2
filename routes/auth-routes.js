@@ -95,7 +95,7 @@ router.post('/login', passport.authenticate('local',
 // LOGOUT GET
 router.get('/logout', (req, res) => {
   req.logout();
-  res.redirect('/');
+  res.redirect('/login');
 });
 
 //USER PROFILE GET
@@ -106,29 +106,29 @@ router.get('/userprofile', (req, res, next) => {
 
 //USER PROFILE POST
 router.post('/userprofile', (req, res, next) => {
-
+  
 })
 
 
-// //USER ID GET
-// router.get("/users/:id", (req, res, next) => {
+//USER ID GET
+router.get("/userprofile/users/:id", (req, res, next) => {
 
-//   User.findById( req.params.id)
+  User.findById( req.params.id)
 
-//   .then((theUser )=> {
-//     res.json(theUser);
-//   })
+  .then((theUser )=> {
+    res.json(theUser);
+  })
 
-//   .catch((err) => {
-//     console.log(err);
-//   });
+  .catch((err) => {
+    console.log(err);
+  });
   
-//   })
+  })
 
 
-  router.post("/users/update/:id" ,  (req, res, next)=> {
+  router.post('/users/update/:id' ,  (req, res, next)=> {
 
-    User.findByIdAndUpdate(req.params.id, req.body)
+    User.findByIdAndUpdate(req.params.id)
     .then((updatedUser) => {
       res.json(updatedUser);
     })
@@ -139,5 +139,14 @@ router.post('/userprofile', (req, res, next) => {
     
   }) 
 
+
+
+  router.get('/pet-search' , (req,res,next) => {
+    res.render('auth/pet-search');
+  })
+  
+  router.post('/pet-search' , (req,res,next) => {
+    res.render('auth/pet-search');
+  })
 
 module.exports = router;

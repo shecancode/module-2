@@ -1,27 +1,31 @@
-<h2>Log in</h2>
+<body class="login">
+<div>
+  <h2>Log in</h2>
+    <form action="/login" method="POST" id="form-container">
 
-<form action="/login" method="POST" id="form-container">
-
-  <label for="email">Email</label>
-  <input id="email" type="text" name="username" placeholder="Your@email.com">
-     <br><br>
-  <label for="password">Password</label>
-  <input id="password" type="password" name="password" placeholder="Your password">
- 
+      <label for="email">Email</label>
+      <input id="email" type="text" name="username" placeholder="Your@email.com">
+        <br><br>
+      <label for="password">Password</label>
+      <input id="password" type="password" name="password" placeholder="Your password">
+    
 
 
-  {{#if message}}
-    <div class="error-message">{{ message }}</div>
-  {{/if}}
-  <br><br>
+      {{#if message}}
+        <div class="error-message">{{ message }}</div>
+      {{/if}}
+      <br><br>
 
-  <button>Log in</button>
+      <button>Log in</button>
 
-  <p class="account-message">
-    Don't have an account?
-    <a href="/signup">Sign up</a>
-  </p>
+      <p class="account-message">
+        Don't have an account?
+        <a href="/signup">Sign up</a>
+      </p>
 
-  <br><br>
-  <a href="/">Go Home</a>
-</form>
+      <br><br>
+      <a href="/">Go Home</a>
+    </form>
+</div>
+</body>
+

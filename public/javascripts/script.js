@@ -6,16 +6,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 $(document).ready(function(){
 
-    $("#edit-character-form").submit(function(e) {
-      e.preventDefault();
-      const firstname = $('edit-first').val();
-      console.log(firstname);
-      const editUserInfo = {};
-      editUserInfo.firstname = $(".edit-first").val()
-      editUserInfo.lastname = $(".edit-last").val()
-      editUserInfo.email = $ (".edit-email").val();
-      editUserInfo.password = $ (".edit-password").val();
-      editUserInfo.zipcode = $(".edit-zipcode").val()
+  var petfinder = require('petfinder')('api_key','api_secret');
+
+
+  petfinder.getBreedList('cat', function(err, breeds) {
+    console.log(breeds)
+  });
+
+  
+
+
     
   })
-})

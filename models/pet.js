@@ -24,7 +24,8 @@ const petSchema = new Schema({
     goodwithdogs: Boolean
     
 
-})
+}) 
+
 
 const Pet = mongoose.model(`Pet`, petSchema);
 
