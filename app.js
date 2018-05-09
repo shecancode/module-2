@@ -15,6 +15,7 @@ const LocalStrategy= require('passport-local').Strategy;
 const session      = require('express-session');
 const bcrypt       = require('bcrypt');
 const flash        = require('connect-flash')
+// const api         = petfinder.PetFinderClient(api_key='c6c8a1519183ccfdf3c594afd6c2cf4e', api_secret='028811f204561647bf88beb8492e8af5')
 
 
 mongoose.Promise = Promise;
@@ -107,6 +108,8 @@ const index = require('./routes/index');
 app.use('/', index);
 const authRoutes = require('./routes/auth-routes');
 app.use('/', authRoutes)
+const pet = require('./routes/pet-routes');
+app.use('/', pet)
 
 
 module.exports = app;

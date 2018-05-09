@@ -141,12 +141,4 @@ router.get("/userprofile/users/:id", (req, res, next) => {
 
 
 
-  router.get('/pet-search' , (req,res,next) => {
-    res.render('auth/pet-search');
-  })
-  
-  router.post('/pet-search' , (req,res,next) => {
-    res.render('auth/pet-search');
-  })
-
 module.exports = router;

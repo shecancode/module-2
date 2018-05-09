@@ -1,0 +1,62 @@
+ <div class="pet-container">
+  <h2>Pet search</h2>
+  <form action="/pet-search" method="POST">
+  <div class="form-row align-items-center">
+    <div class="col-auto my-1">
+      <label class="mr-sm-3" for="inlineFormCustomSelect">Animal</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="animal">
+        <option selected>Choose...</option>
+        <option value="barnyard">Barnyard</option>
+        <option value="bird">Bird</option>
+        <option value="cat">Cat</option>
+        <option value="dog">Dog</option>
+        <option value="horse">Horse</option>
+        <option value="reptile">Reptile</option>
+        <option value="smallfurry">Small Furry</option>
+      </select>
+    </div>
+    
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Size</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="size">
+        <option selected>Choose...</option>
+        <option value="S">Small</option>
+        <option value="M">Medium</option>
+        <option value="L">Large</option>
+         <option value="XL">Extra large</option>
+      </select>
+    </div>
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Gender</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="gender">
+        <option selected>Choose...</option>
+        <option value="M">Male</option>
+        <option value="F">Female</option>
+      </select>
+    </div>
+    <div class="col-auto my-1">
+      <label class="mr-sm-2" for="inlineFormCustomSelect">Age</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="age">
+        <option selected>Choose...</option>
+        <option value="Baby">Baby</option>
+        <option value="Young">Young</option>
+        <option value="Adult">Adult</option>
+        <option value="Senior">Senior</option>
+      </select>
+    </div>
+
+    <label for="">Zipcode</label>
+    <input type="text" name="zipcode">
+
+    <div class="col-auto my-1">
+      <div class="custom-control custom-checkbox mr-sm-2">
+        <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+        <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+      </div>
+    </div>
+    <div class="col-auto my-1">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+ </div>

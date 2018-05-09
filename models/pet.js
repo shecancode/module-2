@@ -21,7 +21,8 @@ const petSchema = new Schema({
     available: Boolean,
     goodwithkids: Boolean,
     goodwithcats: Boolean,
-    goodwithdogs: Boolean
+    goodwithdogs: Boolean,
+    // imgPath = String,
     
 
 }) 
