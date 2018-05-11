@@ -27,6 +27,7 @@ h2 {
 
 .user-background {
   height: 100%;
+  padding-top: 100px;
   background: #36D1DC;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
