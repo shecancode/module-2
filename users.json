@@ -1,0 +1,5 @@
+{"_id":{"$oid":"5af07b4e701a49836822905f"},"firstname":"sandra","lastname":"bosk","email":"sandra@sandra.com","password":"$2b$10$e5.eHlAGLzhFJnzADM.IXOSESGIyy1zqk70jgakgJeqfyldy9wYqO","zipcode":33139,"__v":0}
+{"_id":{"$oid":"5af0aa49d8c6b9164c35bb17"},"firstname":"Rick","lastname":"Sanchez","email":"Rick@rickmail.com","password":"$2b$10$X/Rbi/I6Y0uWARQ3GJnMMub7tSio8rmHZgQQmgyw0kvWjSNDu5EHK","zipcode":33100,"__v":0}
+{"_id":{"$oid":"5af0ab848518af17302812a9"},"firstname":"Crystal","lastname":"Meneses","email":"crystalm927@gmail.com","password":"$2b$10$e0L4emJN2FNxVXTRxOiDPuXk.PNtoJhsLc715kTv7rF2OIdpi3yVi","zipcode":33145,"__v":0}
+{"_id":{"$oid":"5af287cc9f75dfe5aefc80dd"},"firstname":"Morty","lastname":"Smith","email":"rick@sucks.com","password":"$2b$10$bAL24RIDqCmhk.XnHM.a0.hpOL8hRA3hg3FniI47QtotSx8RwkjH6","zipcode":22344,"__v":0}
+{"_id":{"$oid":"5af5c817b483b58cf639dff2"},"firstname":"Crystal","lastname":"Meneses","email":"crystalm@gmail.com","password":"$2b$10$7WPS7NCYUervw5NbWiyEI.EPer4Qo7lYORYEfAu1tTPReMl5WKUGu","zipcode":33145,"__v":0}
