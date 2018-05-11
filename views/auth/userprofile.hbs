@@ -1,27 +1,37 @@
   <div class="user-background">
+
+  
+
+
   <h2>User profile</h2>
   <h4>Edit profile</h4>
 
-
-  <label for="username-input">First Name</label>
-  <input id="username-input" type="text" name="firstname" placeholder="">
+<form id="edit-character-form" class="character-form" action="/userprofile/{{user._id}}" method="POST">
+  <label for="updated-firstname">First Name</label>
+  <input id="update-firstname" type="text" name="updatedFirstname" placeholder="" value="{{user.firstname}}" required>
     <br><br> 
-  <label for="lastname-input">Last Name</label>
-  <input id="lastname-input" type="text" name="lastname">
+  <label for="updated-firstname">Last Name</label>
+  <input id="update-lastname" type="text" name="updatedLastname" value="{{user.lastname}}" >
      <br><br> 
-  <label for="email-input">Email</label>
-  <input id="email-input" type="text" name="email" >
+  <label for="updated-firstname">Email</label>
+  <input id="update-email" type="text" name="updatedEmail" value="{{user.email}}"  >
      <br><br> 
-  <label for="password-input">Password</label>
-  <input id="password-input" type="password" name="password" placeholder="Your password">
-     <br><br>
-  <label for="zipcode-input">ZipCode</label>
-  <input id="zipcode-input" type="text" name="zipcode" placeholder="">
+  <label for="updated-zipcode">ZipCode</label>
+  <input id="update-zipcode" type="text" name="updatedZipcode" placeholder="" value="{{user.zipcode}}" >
+
+  <button type="submit" class="btn btn-warning b-color">Save changes</button>
+  {{#if message}}
+        <div class="message">
+    {{message}}
+        </div>
+    {{/if}}
+
+  </form>
 
   <h2>Current Pets</h2>
   <h4>Add a pet</h4> 
 
-   <label for="name">Name</label>
+  <label for="name">Name</label>
   <input id="name" type="text" name="name">
 
     <br><br> 
@@ -65,40 +75,25 @@
     <br><br> 
 
     <br><br> 
-{{!-- 
-  <h2>Current Pets</h2>
-  <h4>Add a pet</h4> 
-
-  <label for="name">Name</label>
-  <input id="name" type="text" name="name">
-
-    <br><br> 
-
-  <label for="type">Type</label>
-  <select class="form-control">
-      <option>Dog</option>
-      <option>Cat</option>
-      <option>Rabbit</option>
-      <option>Bird</option>
-      <option>Reptile</option>
-      <option>Small and furry</option>
-      <option>Horse</option>
-      <option>Barnyard</option>
-
-  </select> --}}
 
   <label for="birthday">Birthday/Adoption day</label>
   <input id="birthday" type="text" name="birthday">
   <br><br>
-  <button class="update">Update profile</button>
+  {{!-- <button class="update">Update profile</button> --}}
 
   <br><br>
   <div>
-    <button href="/pet-surrender">Re-Home your pet</button>
+    <button href="#">Update Pet</button>
+    {{!-- <form action="/">
+      <button href="#">Delete Pet</button>
+    </form> --}}
+    
   </div>
 
   
   </div>
 
-
+<form action="/userprofile/{{user._id}}/delete" method="POST">
+      <button type="submit">Delete Profile</button>
+    </form>
 

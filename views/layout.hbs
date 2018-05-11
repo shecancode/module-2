@@ -6,16 +6,22 @@
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-       <link rel="stylesheet" href="./stylesheets/style.css">
-       <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+       <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+       <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+       <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+       <link rel="stylesheet" href="/stylesheets/style.css">
 
   </head>
   <body>
 
-{{!-- <nav class="navbar">
+{{!-- <nav class="navbar"></nav>
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -29,7 +35,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    < class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
         <li class="dropdown">
@@ -49,8 +55,7 @@
          <li><a href="/login" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Log in</a></li> 
         <li><a href="/signup">Sign Up</a></li> --}}
 
-        <div class="container-fluid">
-    
+  {{!-- <div class="container-fluid">
     <!-- Second navbar for sign in -->
     <nav class="navbar navbar-default">
       <div class="container">
@@ -65,8 +70,6 @@
           <a class="navbar-brand" href="/">Find a Pet</a>
         </div>
 
-        
-    
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-collapse-2">
           <ul class="nav navbar-nav navbar-right">
@@ -75,17 +78,17 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Contact</a></li>
             <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse By <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="https://www.fiverr.com/irfan_web">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="https://www.fiverr.com/irfan_web">click on this link</a></li>
-          </ul>
-        </li>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Browse By <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://www.fiverr.com/irfan_web">Separated link</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="https://www.fiverr.com/irfan_web">click on this link</a></li>
+              </ul>
+          </li>
             <li>
                <a class="btn btn-default btn-outline btn-circle" href="/login">Log in</a>
             </li>
@@ -93,14 +96,36 @@
                <a class="btn btn-default btn-outline btn-circle" href="/signup">Sign up</a>
             </li>
 
-          </ul>
-        
-            </form>
-          </div>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container -->
-    {{!-- </nav><!-- /.navbar --> --}}
+            <li>
+               <a class="btn btn-default btn-outline btn-circle" href="/logout">Log out</a>
+            </li>
+            
 
+          </ul>
+          </div>
+        </div>
+      </nav>
+   </div><!-- /.container -->
+    </nav><!-- /.navbar --> --}}
+
+    <nav class="navbar navbar-expand-lg mb-4 top-bar navbar-static-top sps sps--abv">
+        <div class="container">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCollapse1" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand mx-auto" href="#">Find <span> A Pet</span></a>
+      <div class="collapse navbar-collapse" id="navbarCollapse1">
+        <ul class="navbar-nav ml-auto">
+         <li class="nav-item active"> <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a> </li>
+         <li class="nav-item"> <a class="nav-link" href="#contact">Contact</a> </li>
+         <li class="nav-item"> <a class="nav-link" href="/login">Log in</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="/signup">Sign up</a> </li>
+        <li class="nav-item"> <a class="nav-link" href="/logout">Log out</a> </li>
+           
+        </ul>
+      </div>
+            </div>
+    </nav>
 
   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -130,5 +155,6 @@
      {{{body}}}
   
     <script src='/javascripts/script.js'></script>
+
   </body>
 </html>

@@ -2,21 +2,147 @@
 <h1>Hello</h1>
 <h2>Welcome to {{title}}</h2> --}}
 
-<a href="/logout">Log out</a>
+ 
+<div class="swiper-container main-slider" id="myCarousel">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide slider-bg-position" style="background:url('/images/dog-hug.jpg')" data-hash="slide1">
+      <h2>Where pets find their furrever home <br>  <button class=""><a href="/pet-search" >Find Pets Near You</a></button></h2>
+    </div>
+    <div class="swiper-slide slider-bg-position" style="background:url('/images/lewisville.jpg')" data-hash="slide2">
 
-<div class="jumbotron">
+    </div>
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Navigation -->
+  <div class="swiper-button-prev"><i class="fa fa-chevron-left"></i></div>
+  <div class="swiper-button-next"><i class="fa fa-chevron-right"></i></div>
+</div>
+
+<!-- Benefits
+    ================================================== -->
+<section class="service-sec" id="benefits">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="heading">
+      <h2>Planning to Adopt a Pet?</h2>
+    </div>
+        </div>
+      <div class="col-md-8">
+        <div class="row">
+            <div class="col-md-8 text-sm-center service-block"> 
+          <h3>Checklist for New Adopters</h3>
+          <p>Help make the transition, as smooth as possible.</p>
+        </div>
+        <div class="col-md-8 text-sm-center service-block"> 
+          <h3>Finding the Right Pet</h3>
+          <p>Get tips on figuring out who you should adopt.</p>
+        </div>
+        <div class="col-md-8 text-sm-center service-block">
+          <h3>Pet Adoption FAQs</h3>
+          <p>Get answers to questions you haven't thought of.</p>
+        </div>
+        
+      <div class="col-md-4"> <img src="/images/derpy.jpg" class="img-fluid" /> </div>
+    </div>
+    <!-- /.row --> 
+  </div>
+</section>
+
+<!-- About 
+    ================================================== -->
+<section class="about-sec parallax-section" id="about">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <h2><small>Who We Are</small>About<br>
+           Us</h2>
+      </div>
+      <div class="col-md-7">
+        <p>Find A Pet is an online, searchable database of animals who need homes. It is also a directory of nearly 14,000 animal shelters and adoption organizations across the U.S., Canada and Mexico. Organizations maintain their own home pages and available-pet databases.</p>
+        <p>Saving our planet, lifting people out of poverty, advancing economic growth... these are one and the same fight. We must connect the dots between climate change, water scarcity, energy shortages, global health, food security and women's empowerment. Solutions to one problem must be solutions for all.</p>
+      </div>
+  </div>
+</section>
+
+      
+{{!-- <div class="jumbotron">
 
  
   <h1 class="text-center">Where pets find their furrever home</h1>
   <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil sapiente, voluptas accusamus accusantium rerum assumenda vitae? Quo impedit vitae et possimus porro rerum tempora eaque voluptas! Accusantium animi vitae incidunt!</p>
   <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-</div>
+</div> --}}
 
 
 <div class="row">
     <h2>Pets near you</h2>
-  <div class="col-sm-6 col-md-4">
-    <div class="thumbnail">
+  <div class="col"> 
+    <div class="pet-container">
+    {{!-- <h2>Pet search</h2> --}}
+    <form action="/pet-search" method="POST">
+    <div class="form-row align-items-center">
+      <div class="col-auto my-1">
+        <label class="mr-sm-3" for="inlineFormCustomSelect">Animal</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="animal">
+          <option selected>Choose...</option>
+          <option value="barnyard">Barnyard</option>
+          <option value="bird">Bird</option>
+          <option value="cat">Cat</option>
+          <option value="dog">Dog</option>
+          <option value="horse">Horse</option>
+          <option value="reptile">Reptile</option>
+          <option value="smallfurry">Small Furry</option>
+        </select>
+      </div>
+      
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Size</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="size">
+          <option selected>Choose...</option>
+          <option value="S">Small</option>
+          <option value="M">Medium</option>
+          <option value="L">Large</option>
+            <option value="XL">Extra large</option>
+        </select>
+      </div>
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Gender</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="gender">
+          <option selected>Choose...</option>
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+        </select>
+      </div>
+      <div class="col-auto my-1">
+        <label class="mr-sm-2" for="inlineFormCustomSelect">Age</label>
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" name="age">
+          <option selected>Choose...</option>
+          <option value="Baby">Baby</option>
+          <option value="Young">Young</option>
+          <option value="Adult">Adult</option>
+          <option value="Senior">Senior</option>
+        </select>
+      </div>
+
+      <label for="">Zipcode</label>
+      <input type="text" name="zipcode">
+
+      <div class="col-auto my-1">
+        <div class="custom-control custom-checkbox mr-sm-2">
+          <input type="checkbox" class="custom-control-input" id="customControlAutosizing">
+          <label class="custom-control-label" for="customControlAutosizing">Remember my preference</label>
+        </div>
+      </div>
+      <div class="col-auto my-1">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+    </form>
+    </div>
+
+    {{!-- <div class="thumbnail">
       <div class="caption">
         <h3>Thumbnail label</h3>
         <p>...</p>
@@ -41,7 +167,7 @@
         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
       </div>
     </div>
-  </div>
+  </div> --}}
   
 </div>
 

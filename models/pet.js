@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
+const User = require('./user');
 mongoose.connect('mongodb://localhost/module-2', {useMongoClient: true})
 
 const petSchema = new Schema({
@@ -21,10 +21,7 @@ const petSchema = new Schema({
     available: Boolean,
     goodwithkids: Boolean,
     goodwithcats: Boolean,
-    goodwithdogs: Boolean,
-    // imgPath = String,
-    
-
+    goodwithdogs: Boolean,    
 }) 
 
 

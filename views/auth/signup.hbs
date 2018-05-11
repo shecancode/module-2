@@ -1,6 +1,6 @@
-<h2>Signup</h2>
 
-<form action="/signup" method="POST" id="form-container">
+
+{{!-- <form action="/signup" method="POST" id="form-container">
 
   <label for="username-input">First Name</label>
   <input id="username-input" type="text" name="firstname" placeholder="Rick">
@@ -32,4 +32,88 @@
 
   <br><br>
   <a href="/">Go Home</a>
-</form>
+</form> --}}
+<div class="signup">
+
+<section id="login">
+    <div class="container">
+    	<div class="row">
+    	    <div class="col-xs-12">
+        	    <div class="form-wrap">
+                <h1 class="text">Log in with your email account</h1>
+                    <form role="form" action="/signup" method="POST" id="form-container" autocomplete="off">
+                        <div class="form-group">
+                            <label for="username-input" class="sr-only">firstname</label>
+                            <input type="text" name="firstname" id="username-input" class="form-control" placeholder="Rick">
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname-input" class="sr-only">lastname</label>
+                            <input type="text" name="lastname" id="lastname-input" class="form-control" placeholder="Sanchez">
+                        </div>
+                        <div class="form-group">
+                            <label for="email-input" class="sr-only">email</label>
+                            <input type="text" name="email" id="email-input" class="form-control" placeholder="RickSanchez@rickmail.com">
+                            
+                        </div>
+                        <div class="form-group">
+                            <label for="password-input" class="sr-only">password</label>
+                            <input type="password" name="password" id="password-input" class="form-control" placeholder="Password" minlength="5" maxlength="12">
+                        </div>
+                        <div class="form-group">
+                            <label for="zipcode-input" class="sr-only">zipcode</label>
+                            <input type="text" name="zipcode" id="zipcode-input" class="form-control" placeholder="33045">
+                        </div>
+                        <div class="checkbox">
+                            <span class="character-checkbox" onclick="showPassword()"></span>
+                            <span class="label">Show password</span>
+                        </div>
+                        {{#if message}}
+                                  <div class="error-message">{{ message }}</div>
+                        {{/if}}
+                            <br><br>
+
+                            <button type="submit" id="btn-login" class="btn btn-custom btn-lg btn-block" value="Log in">Log in</button>
+
+                    </form>
+                    <a href="javascript:;" class="forget" data-toggle="modal" data-target=".forget-modal">Forgot your password?</a>
+                    <hr>
+        	    </div>
+    		</div> <!-- /.col-xs-12 -->
+    	</div> <!-- /.row -->
+    </div> <!-- /.container -->
+</section>
+
+<div class="modal fade forget-modal" tabindex="-1" role="dialog" aria-labelledby="myForgetModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-sm">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					<span aria-hidden="true">×</span>
+					<span class="sr-only">Close</span>
+				</button>
+				<h4 class="modal-title">Recovery password</h4>
+			</div>
+			<div class="modal-body">
+				<p>Type your email account</p>
+				<input type="email" name="recovery-email" id="recovery-email" class="form-control" autocomplete="off">
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+				<button type="button" class="btn btn-custom">Recovery</button>
+			</div>
+		</div> <!-- /.modal-content -->
+	</div> <!-- /.modal-dialog -->
+</div> <!-- /.modal -->
+
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>Page © - 2014</p>
+                <p>Powered by <strong><a href="http://www.facebook.com/tavo.qiqe.lucero" target="_blank">TavoQiqe</a></strong></p>
+            </div>
+        </div>
+    </div>
+</footer>
+</div>
+</div>

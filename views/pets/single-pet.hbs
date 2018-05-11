@@ -1,14 +1,13 @@
-{{#each dataToSend}}
 
-
-    <h4><a href="/single-pet/{{animal.id}}">Name:</a> {{ animal.name}}</h4>
+    
+    <h4>Name: {{ animal.name}}</h4>
     <p>Type of animal: {{animal.animal}}</p>
     <p>Mix: {{animal.mix}}</p>
     <p>Age: {{animal.age}}</p>
     <p>Gender: {{animal.sex}}</p>
     <p>Size: {{animal.size}}</p>
+    <p>Description: {{animal.description}}</p>
   
-  {{#if image}}
-    <img src="{{image}}" alt="">
+  {{#if photo}}
+    <img src="{{photo}}" alt="">
   {{/if }}
-{{/each}}

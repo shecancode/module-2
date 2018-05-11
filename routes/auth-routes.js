@@ -100,45 +100,95 @@ router.get('/logout', (req, res) => {
 
 //USER PROFILE GET
 router.get('/userprofile', (req, res, next) => {
-  res.render('auth/userprofile', {user: req.user});
-
-})
-
-//USER PROFILE POST
-router.post('/userprofile', (req, res, next) => {
   
-})
-
-
-//USER ID GET
-router.get("/userprofile/users/:id", (req, res, next) => {
-
-  User.findById( req.params.id)
-
+  User.findById( req.user._id)
+  
   .then((theUser )=> {
-    res.json(theUser);
+    // res.json(theUser);
+    res.render('auth/userprofile', {user: theUser});
   })
 
   .catch((err) => {
     console.log(err);
   });
-  
-  })
 
+})
 
-  router.post('/users/update/:id' ,  (req, res, next)=> {
-
-    User.findByIdAndUpdate(req.params.id)
-    .then((updatedUser) => {
-      res.json(updatedUser);
+//USER PROFILE POST
+router.post('/userprofile/:id', (req, res, next) => {
+  User.findById(req.params.id)
+  .then( foundUser => {
+    // console.log("user before update is: ", foundUser);
+    // console.log("body is: ", req.body)
+    foundUser.firstname = req.body.updatedFirstname;
+    foundUser.lastname = req.body.updatedLastname;
+    foundUser.email = req.body.updatedEmail;
+    foundUser.zipcode = req.body.updatedZipcode;
+    // console.log("User after update: ", foundUser)
+    foundUser.save()
+    .then(() => {
+      res.redirect('/userprofile')
     })
-   .catch((err) => {
-     console.log(err);
-     next(err);
-   })
-    
+    .catch( err => {
+      console.log("error while saving updated user: ", err)
+    })
+  } )
+  .catch(err => {
+    console.log("error while finding user: ", err)
+  } )
+})
+
+
+// delete profile POST route
+router.post('/userprofile/:userId/delete', (req, res, next) => {
+  const userID = req.params.userId;
+  User.findByIdAndRemove(userID)
+  .then(() => {
+    res.redirect('/')
+  })
+  .catch( error => {
+    console.log("Error while deleting the user: ", error)
+  } )
+})
+
+
+
+
+
+
+
+
+
+
+
+  router.post('/:id/update', ensureLogin.ensureLoggedIn('/login'),  (req, res, next)=> {
+    const userId = req.params.id;
+
+    const newFirstname = req.body.updatedFirstname;
+    const newLastname  = req.body.updatedLastname;
+    const newEmail     = req.body.updatedEmail;
+    const newPassword  = req.body.updatedPassword;
+    const newZipcode   = req.body.updatedZipcode;
+
+    User.findByIdAndUpdate(userId, {
+        firstname: newFirstname,
+        lastname: newLastname,
+        email: newEmail,
+        password: newPassword,
+        zipcode:  newZipcode
+    })
+
+    .then( (user) => {
+      console.log('hi')
+      res.redirect(`/userprofile/${userId}`)
+      
+  } )
+  .catch(error => {
+      console.log("Error while saving updates: ", error)
+  }) 
   }) 
 
+  
 
 
 module.exports = router;
