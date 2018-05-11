@@ -1,6 +1,8 @@
+
+<div class="container petresults">
+  <div class="row">
 {{#each dataToSend}}
-
-
+    <div class="col-md-4">
     <h4><a href="/single-pet/{{animal.id}}">Name:</a> {{ animal.name}}</h4>
     <p>Type of animal: {{animal.animal}}</p>
     <p>Mix: {{animal.mix}}</p>
@@ -11,4 +13,8 @@
   {{#if image}}
     <img src="{{image}}" alt="">
   {{/if }}
+    </div>
 {{/each}}
+  </div>
+</div>
+    

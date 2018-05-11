@@ -13,6 +13,22 @@ const saltRounds  = 10;
 
 
 
+//USER PROFILE GET
+router.get('/userprofile', (req, res, next) => {
+  
+  User.findById( req.user._id)
+  
+  .then((theUser )=> {
+    // res.json(theUser);
+    res.render('auth/userprofile', {user: theUser});
+  })
+
+  .catch((err) => {
+    console.log(err);
+  });
+
+})
+
 
 //SIGNUP GET
 router.get('/signup', (req, res, next) => {
@@ -98,21 +114,7 @@ router.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
-//USER PROFILE GET
-router.get('/userprofile', (req, res, next) => {
-  
-  User.findById( req.user._id)
-  
-  .then((theUser )=> {
-    // res.json(theUser);
-    res.render('auth/userprofile', {user: theUser});
-  })
 
-  .catch((err) => {
-    console.log(err);
-  });
-
-})
 
 //USER PROFILE POST
 router.post('/userprofile/:id', (req, res, next) => {

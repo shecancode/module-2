@@ -16,6 +16,7 @@ h2 {
   text-align: center; }
 
 .pet-container {
+  padding-top: 90px;
   height: 800px;
   background: #36D1DC;
   /* fallback for old browsers */
@@ -968,5 +969,23 @@ button.swiper-pagination-bullet {
   background: -webkit-linear-gradient(to right, #5B86E5, #36D1DC);
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #5B86E5, #36D1DC); }
+
+.findpets {
+  border: 1px black;
+  border-radius: 4px; }
+
+.findpets a {
+  text-decoration: none; }
+
+.petresults {
+  padding-top: 90px; }
+
+.btn-adopt {
+  font-size: 35px;
+  border-radius: 7px; }
+
+.single-pet {
+  height: 950px;
+  padding-top: 150px; }
 
 /*# sourceMappingURL=style.css.map */
